@@ -83,7 +83,17 @@ class CfgWeapons
 		picture = "\SWLB_clones\data\ui\icon_SWLB_clone_helmet_ca.paa";
 		hiddenSelectionsTextures[]=
 		{
-	    	"\41st_Base\Data\Helmets\HS_41st_Trooper_Helmet.paa"
+	    	"\41st_Base\Data\Helmets\41st_Trooper_Helmet.paa"
+		};
+	};
+
+	class HS_41st_ARF_Helmet: SWLB_clone_ARF_P1_helmet
+	{
+		displayName="[41st EC] Clone ARF Helmet";
+		picture = "\SWLB_clones\data\ui\icon_SWLB_clone_helmet_ca.paa";
+		hiddenSelectionsTextures[]=
+		{
+	    	"\41st_Base\Data\Helmets\41st_ARF_Helmet.paa"
 		};
 	};
 
