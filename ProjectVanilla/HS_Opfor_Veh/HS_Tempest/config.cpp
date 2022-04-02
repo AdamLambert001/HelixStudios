@@ -2,21 +2,29 @@ class CfgPatches
 {
 	class HS_EPC_Truck_03
 	{
-		addonRootClass="A3_Soft_F_EPC";
+		author="Helix Studios";
 		requiredAddons[]=
 		{
-			"A3_Soft_F_EPC"
+			"A3_Soft_F_EPC",
+			"A3_Data_F",
+			"A3_Weapons_F",
+			"A3_Soft_F",
+			"A3_UI_F", 
+			"SWLW_main",
+			"SWLW_clones",
+			"SWLB_equipment",
+			"SWLB_main"
 		};
 		requiredVersion=0.1;
 		units[]=
 		{
-			"O_Truck_03_ammo_F",
-			"O_Truck_03_covered_F",
-			"O_Truck_03_device_F",
-			"O_Truck_03_fuel_F",
-			"O_Truck_03_medical_F",
-			"O_Truck_03_repair_F",
-			"O_Truck_03_transport_F"
+			"HS_GAR_Truck_03_transport_F",
+			"HS_GAR_Truck_03_medevac_F",
+			"HS_GAR_Truck_03_covered_F",
+			"HS_GAR_Truck_03_fuel_F",
+			"HS_GAR_Truck_03_ammo_F",
+			"HS_GAR_Truck_03_repair_F",
+			"HS_GAR_Truck_03_device_F"
 		};
 		weapons[]={};
 	};
@@ -35,7 +43,7 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";
-		crew="B_Soldier_F";
+		crew="SWLB_clone_assault_base_P2";
 		displayName="Tempest Transport";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_transport_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_transport_CA.paa";
@@ -99,8 +107,8 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";   
-		crew="B_Soldier_F";
-		displayName="Tempest Transport (Medical)";
+		crew="SWLB_clone_medic_base_P2";
+		displayName="Tempest Medical";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_covered_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_medevac_CA.paa";
 		icon="\A3\Soft_F_EPC\Truck_03\Data\UI\map_Truck_03_medevac_CA.paa";
@@ -150,7 +158,7 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";   
-		crew="B_Soldier_F";
+		crew="SWLB_clone_assault_base_P2";
 		displayName="Tempest Transport (Covered)";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_covered_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_transport_CA.paa";
@@ -218,8 +226,8 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";
-		crew="B_Soldier_F";
-		displayName="Tempest Rhydonium Tanker (Fuel)";
+		crew="SWLB_clone_engineer_base_P2";
+		displayName="Tempest Fuel";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_fuel_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_fuel_CA.paa";
 		icon="\A3\Soft_F_EPC\Truck_03\Data\UI\map_Truck_03_Fuel_CA.paa";
@@ -268,8 +276,8 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";   
-		crew="B_Soldier_F";
-		displayName="Tempest Supply";
+		crew="SWLB_clone_engineer_base_P2";
+		displayName="Tempest Ammo";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_box_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_box_CA.paa";
 		icon="\A3\Soft_F_EPC\Truck_03\Data\UI\map_Truck_03_box_CA.paa";
@@ -321,7 +329,7 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";
-		crew="B_Soldier_F";
+		crew="SWLB_clone_engineer_base_P2";
 		displayName="Tempest Repair";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_repair_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_ammo_CA.paa";
@@ -371,7 +379,7 @@ class CfgVehicles
 		side=1;
 		faction="HS_GAR_Fac";
         editorSubcategory="HS_CAR";   
-		crew="B_Soldier_F";
+		crew="SWLB_clone_assault_base_P2";
 		displayName="Tempest Device";
 		model="\A3\Soft_F_EPC\Truck_03\Truck_03_device_F.p3d";
 		picture="\A3\Soft_F_EPC\Truck_03\Data\UI\truck_03_device_CA.paa";
