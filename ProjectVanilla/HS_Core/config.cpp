@@ -88,4 +88,8 @@ class CfgEditorSubcategories
 	{
 		displayName="Anti-Air";
 	};
+	class HS_PLN
+	{
+		displayName="Planes";
+	};
 };
