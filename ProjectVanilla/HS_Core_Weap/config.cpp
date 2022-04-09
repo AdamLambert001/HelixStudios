@@ -26,10 +26,34 @@ class CfgPatches
 		};
 	};
 };
-class CfgAmmo {};
+/*extern*/ class Mode_SemiAuto;
+/*extern*/ class Mode_Burst;
+/*extern*/ class Mode_FullAuto;
 
-class CfgMagazines {};
+class CfgAmmo {
+	/*extern*/ class BulletCore;
+	class BulletBase: BulletCore {
+		/*extern*/ class SuperSonicCrack;
+	};
+	/*extern*/ class GrenadeBase;
+};
+
+class CfgMagazines {
+	/*extern*/ class UGL_FlareRed_F;
+	/*extern*/ class 1Rnd_Smoke_Grenade_shell;
+	/*extern*/ class 1Rnd_SmokeRed_Grenade_shell;
+	/*extern*/ class CA_Magazine;
+};
+
+class CfgLights {};
 
 class CfgWeapons {
+	/*extern*/ class Default;
+	/*extern*/ class CannonCore;
 
+};
+
+class cfgMods {
+	author = "Helix Studios";
+	timepacked = "180009042022";
 };
