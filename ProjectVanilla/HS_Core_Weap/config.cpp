@@ -13,6 +13,7 @@ class CfgPatches
 			"SWLW_clones",
 			"SWLB_equipment",
 			"SWLB_main",
+			"HS_Core"
 		};
 		requiredVersion=0.1;
 		units[]= 
@@ -24,4 +25,11 @@ class CfgPatches
 
 		};
 	};
+};
+class CfgAmmo {};
+
+class CfgMagazines {};
+
+class CfgWeapons {
+
 };
