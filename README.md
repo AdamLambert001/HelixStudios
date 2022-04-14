@@ -1,12 +1,22 @@
 # HelixStudiosStarsim
-Version: 
-Recent Update:
 
+Studio Discord<br>
+https://discord.gg/92uxcyWmzp
 
-FAQs:
+## Version: 
+## Recent Update:
+> N/A Project is still in major Alpha build.<br>
 
-Contact:
+## FAQs:
 
-Other Info:
+## Contact:
+### Project Leads
+Wallace Discord: Wallace#8129<br>
+Roach   Discord: Rib#4206<br>
 
-Past Updates:
+### Developers
+Raccoon Discord: Schlopp#8831<br>
+
+## Other Info:
+
+## Past Updates:
