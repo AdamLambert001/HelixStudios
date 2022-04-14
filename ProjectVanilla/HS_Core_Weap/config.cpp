@@ -3,7 +3,8 @@ class CfgPatches
   class HS_Core_Weap
 	{
 		author="Helix Studios";
-		name = "Project Vanilla - Core Weapons & Bases" 
+		name = "Project Vanilla - Core Weapons & Bases";
+		url = "https://discord.gg/92uxcyWmzp";
 		requiredAddons[]=
 		{
 			"A3_Data_F",
@@ -240,7 +241,7 @@ class CfgAmmo {
 			frequency = 20;
 			distance = 1;
 		};
-	};
+	}; //find a use for this later
 
 	class HS_R_HMG: HS_ammo_base_blue {
 		model = "SWLW_main\Effects\laser_blue.p3d";
@@ -580,6 +581,15 @@ class CfgMagazines {
 		muzzleImpulseFactor[] = {0.5,3};
 	};
 
+	class HS_R_1500rnd_13mm: HS_Base_Magazine {
+		ammo = "HS_R_HMG";
+		count = 1500;
+		displayName = "$STR_HS_CfgMagazines_1500rnd_13mm0";
+		descriptionShort = "$STR_HS_CfgMagazines_1500rnd_13mm1";
+		initSpeed = 540;
+		muzzleImpulseFactor[] = {0.1,0.2}
+	};
+
 	/*CIS*/
 	class HS_C_300rnd_20mm: HS_R_300rnd_20mm {
 		ammo = "HS_C_20mm";
@@ -628,6 +638,10 @@ class CfgMagazines {
 	class H_C_15rnd_125mm_HEAT: HS_R_15rnd_125mm_HEAT {
 		ammo = "HS_C_120mm_HEAT";
 	};
+
+	class H_C_1500rnd_13mm: HS_R_1500rnd_13mm {
+		ammo = "HS_C_HMG";
+	};
 };
 
 class CfgLights {};
@@ -636,13 +650,21 @@ class CfgWeapons {
 	/*extern*/ class Default;
 	/*extern*/ class CannonCore;
 
-	class HS_CannonCore: CannonCore {
+	class HS_R_CannonCore: CannonCore {
 		author = "Helix Studios";
 		scope = 0;
-		//kill me 
+		magazines[] = {
+			"",
+		};
 	};
 
-	//NOTE: only put base weapons in here such as cannoncore etc etc... Keep vehicle specific guns in their own configs to keep this clean :)
+	class HS_C_CannonCore: CannonCore {
+		author = "Helix Studios";
+		scope = 0;
+		magazines[] = {
+			"",
+		};
+	};
 
 };
 
