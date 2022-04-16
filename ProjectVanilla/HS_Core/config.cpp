@@ -4,12 +4,13 @@ class CfgPatches
 	{
 		author = "Helix Studios";
 		url = "https://discord.gg/92uxcyWmzp";
-		requiredAddons[]=
+		name = "Project Vanilla";
+		requiredAddons[] =
 		{
 			"A3_Data_F",
 			"SWLB_main",
 		};
-		requiredVersion=REQUIRED_VERSION;
+		requiredVersion = 0.1;
 		units[] = {};
 		weapons[] = {};
 	};

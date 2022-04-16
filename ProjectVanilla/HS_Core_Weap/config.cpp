@@ -2,10 +2,10 @@ class CfgPatches
 { 
   class HS_Core_Weap
 	{
-		author="Helix Studios";
+		author = "Helix Studios";
 		name = "Project Vanilla - Core Weapons & Bases";
 		url = "https://discord.gg/92uxcyWmzp";
-		requiredAddons[]=
+		requiredAddons[] =
 		{
 			"A3_Data_F",
 			"A3_Weapons_F",
@@ -15,17 +15,18 @@ class CfgPatches
 			"SWLB_main",
 			"HS_Core"
 		};
-		requiredVersion=REQUIRED_VERSION;
-		units[]= 
+		requiredVersion = 0.1;
+		units[] = 
 		{
 
 		};
-		weapons[]=
+		weapons[] =
 		{
 
 		};
 	};
 };
+
 /*extern*/ class Mode_SemiAuto;
 /*extern*/ class Mode_Burst;
 /*extern*/ class Mode_FullAuto;
@@ -33,9 +34,11 @@ class CfgPatches
 class CfgAmmo {
 	/*extern*/ class BulletCore;
 	/*extern*/ class GrenadeBase;
+
 	class BulletBase: BulletCore {
 		/*extern*/ class SuperSonicCrack;
 	};
+
 	class HS_ammo_base_blue: BulletBase {
 		author = "Helix Studios";
 		model = "SWLW_main\Effects\laser_blue.p3d"; //thanks legion
@@ -76,86 +79,86 @@ class CfgAmmo {
 		supersoniccrackfar[] = {};
 
 		class SuperSonicCrack: SuperSonicCrack {
-			superSonicCrack = {"", 3.162280, 1, 500};
+			superSonicCrack[] = {"", 3.162280, 1, 500};
 
 			class A {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {0, 10};
-				sound = {"", 3.162280, 1, 500};
+				range[] = {0, 10};
+				sound[] = {"", 3.162280, 1, 500};
 			};
 
 			class B {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {10, 30};
-				sound = {"", 3.162280, 1, 500};
+				range[] = {10, 30};
+				sound[] = {"", 3.162280, 1, 500};
 			};
 
 			class C {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {30, 500};
-				sound = {"", 3.162280, 1, 500};
+				range[] = {30, 500};
+				sound[] = {"", 3.162280, 1, 500};
 			};
 
 			class SCrackForest {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {0, 500};
-				sound1 = {"", 1, 1, 500};
-				sound2 = {"", 1, 1, 500};
-				sound3 = {"", 1, 1, 500};
-				sounds = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
+				range[] = {0, 500};
+				sound1[] = {"", 1, 1, 500};
+				sound2[] = {"", 1, 1, 500};
+				sound3[] = {"", 1, 1, 500};
+				sounds[] = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
 				trigger = "forest";
 			};
 
 			class SCrackHouses {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {0, 500};
-				sound1 = {"", 1, 1, 500};
-				sound2 = {"", 1, 1, 500};
-				sound3 = {"", 1, 1, 500};
-				sounds = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
+				range[] = {0, 500};
+				sound1[] = {"", 1, 1, 500};
+				sound2[] = {"", 1, 1, 500};
+				sound3[] = {"", 1, 1, 500};
+				sounds[] = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
 				trigger = "houses max interior";
 			};
 
 			class SCrackMeadow {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {0, 500};
-				sound1 = {"", 1, 1, 500};
-				sound2 = {"", 1, 1, 500};
-				sound3 = {"", 1, 1, 500};
-				sounds = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
+				range[] = {0, 500};
+				sound1[] = {"", 1, 1, 500};
+				sound2[] = {"", 1, 1, 500};
+				sound3[] = {"", 1, 1, 500};
+				sounds[] = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
 				trigger = "meadow max sea";
 			};
 
 			class SCrackTrees {
 				frequency = "((speed factor [330, 930]) * 0.1) + 1.05";
-				range = {0, 500};
-				sound1 = {"", 1, 1, 500};
-				sound2 = {"", 1, 1, 500};
-				sound3 = {"", 1, 1, 500};
-				sounds = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
+				range[] = {0, 500};
+				sound1[] = {"", 1, 1, 500};
+				sound2[] = {"", 1, 1, 500};
+				sound3[] = {"", 1, 1, 500};
+				sounds[] = {"sound1", 0.333000, "sound2", 0.333000, "sound3", 0.333000};
 				trigger = "trees";
 			};
 		};
-		bulletFly = {"bulletFly1", 0.083000, "bulletFly2", 0.083000, "bulletFly3", 0.083000, "bulletFly4", 0.083000, "bulletFly5", 0.083000, "bulletFly6", 0.083000, "bulletFly7", 0.083000, "bulletFly8", 0.083000, "bulletFly9", 0.083000, "bulletFly10", 0.083000, "bulletFly11", 0.083000, "bulletFly12", 0.083000};
-		bulletFly1 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30}; //Again, thanks Legion Studios.
-		bulletFly10 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
-		bulletFly11 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
-		bulletFly12 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
-		bulletFly2 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
-		bulletFly3 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
-		bulletFly4 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
-		bulletFly5 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
-		bulletFly6 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
-		bulletFly7 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
-		bulletFly8 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
-		bulletFly9 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
-		soundHit1 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
-		soundHit2 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
-		soundHit3 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
-		soundHit4 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
-		soundHit5 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
-		soundHit6 = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
-		multiSoundHit = {"soundHit1", 0.200000, "soundHit2", 0.200000, "soundHit3", 0.200000, "soundHit4", 0.100000, "soundHit5", 0.150000, "soundHit6", 0.150000};
+		bulletFly[] = {"bulletFly1", 0.083000, "bulletFly2", 0.083000, "bulletFly3", 0.083000, "bulletFly4", 0.083000, "bulletFly5", 0.083000, "bulletFly6", 0.083000, "bulletFly7", 0.083000, "bulletFly8", 0.083000, "bulletFly9", 0.083000, "bulletFly10", 0.083000, "bulletFly11", 0.083000, "bulletFly12", 0.083000};
+		bulletFly1[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30}; //Again, thanks Legion Studios.
+		bulletFly10[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
+		bulletFly11[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
+		bulletFly12[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
+		bulletFly2[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
+		bulletFly3[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.580000, 1, 30};
+		bulletFly4[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
+		bulletFly5[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
+		bulletFly6[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
+		bulletFly7[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
+		bulletFly8[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
+		bulletFly9[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 2.238720, 1, 100};
+		soundHit1[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
+		soundHit2[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
+		soundHit3[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
+		soundHit4[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
+		soundHit5[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
+		soundHit6[] = {"SWLW_main\Carbines\DC15s\sounds\DC15s_hit.wss", 1.995262, 1, 120};
+		multiSoundHit[] = {"soundHit1", 0.200000, "soundHit2", 0.200000, "soundHit3", 0.200000, "soundHit4", 0.100000, "soundHit5", 0.150000, "soundHit6", 0.150000};
 
 	};
 
@@ -178,13 +181,13 @@ class CfgAmmo {
 	/*extern*/ class B_30mm_MP;
 	/*extern*/ class B_20mm;
 	
-	class HS_R_40mm_g_he: GrenadeBase {
+	/*class HS_R_40mm_g_he: GrenadeBase {
 		author = "Helix Studios";
 		model = "SWLW_main\Effects\laser_blue.p3d";
 		hit = 100;
 		indirecthit = 8;
 		indirecthitrange = 6;
-		lightcolor = {0.25, 0.25, 0.50};
+		lightcolor[] = {0.25, 0.25, 0.50};
 		flaresize = 6;
 		tracerscale = 6;
 		effectflare = "FlareShell";
@@ -208,11 +211,11 @@ class CfgAmmo {
 		CraterEffects = "GrenadeCrater";
 		CraterWaterEffects = "ImpactEffectsWaterExplosion";
 		explosionEffects = "GrenadeExplosion";
-		soundHit1 = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_01", 3.162278, 1, 1500};
-		soundHit2 = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_02", 3.162278, 1, 1500};
-		soundHit3 = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_03", 3.162278, 1, 1500};
-		soundHit4 = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_04", 3.162278, 1, 1500};
-		multiSoundHit = {"soundHit1", 0.250000, "soundHit2", 0.250000, "soundHit3", 0.250000, "soundHit4", 0.250000};
+		soundHit1[] = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_01", 3.162278, 1, 1500};
+		soundHit2[] = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_02", 3.162278, 1, 1500};
+		soundHit3[] = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_03", 3.162278, 1, 1500};
+		soundHit4[] = {"A3\Sounds_F\arsenal\explosives\Grenades\Explosion_gng_grenades_04", 3.162278, 1, 1500};
+		multiSoundHit[] = {"soundHit1", 0.250000, "soundHit2", 0.250000, "soundHit3", 0.250000, "soundHit4", 0.250000};
 
 		class CamShakeExplode {
 			power = 8;
@@ -241,7 +244,7 @@ class CfgAmmo {
 			frequency = 20;
 			distance = 1;
 		};
-	}; //find a use for this later
+	}; //find a use for this later*/
 
 	class HS_R_HMG: HS_ammo_base_blue {
 		model = "SWLW_main\Effects\laser_blue.p3d";
@@ -263,13 +266,13 @@ class CfgAmmo {
 		ACE_bulletLength = 58.67;
 		ACE_bulletMass = 41.93;
 		ACE_muzzleVelocityVariationSD = 0.35;
-		ACE_ammoTempMuzzleVelocityShifts = {-26.549999, -25.469999, -22.850000, -20.120001, -16.980000, -12.800000, -7.640000, -1.530000, 5.960000, 15.170000, 26.190001};
-		ACE_ballisticCoefficients = {0.670000};
-		ACE_velocityBoundaries = {};
+		ACE_ammoTempMuzzleVelocityShifts[] = {-26.549999, -25.469999, -22.850000, -20.120001, -16.980000, -12.800000, -7.640000, -1.530000, 5.960000, 15.170000, 26.190001};
+		ACE_ballisticCoefficients[] = {0.670000};
+		ACE_velocityBoundaries[] = {};
 		ACE_standardAtmosphere = "ASM";
 		ACE_dragModel = 1;
-		ACE_muzzleVelocities = {900};
-		ACE_barrelLengths = {736.599976};
+		ACE_muzzleVelocities[] = {900};
+		ACE_barrelLengths[] = {736.599976};
 	};
 
 	class HS_R_20mm: B_20mm {
@@ -360,7 +363,7 @@ class CfgAmmo {
 		tracerscale = 12;
 	};
 
-	class HS_R_125mm_HEAT: Sh_125mm_HEAT_MP {
+	class HS_R_125mm_HEAT: Sh_125mm_HEAT {
 		author = "Helix Studios";
 		model = "SWLW_main\Effects\laser_blue.p3d";
 		effectfly = "HS_plasma_blue";
@@ -437,9 +440,7 @@ class CfgAmmo {
 };
 
 class CfgMagazines {
-	/*extern*/ class UGL_FlareRed_F;
-	/*extern*/ class 1Rnd_Smoke_Grenade_shell;
-	/*extern*/ class 1Rnd_SmokeRed_Grenade_shell;
+	
 	/*extern*/ class CA_Magazine;
 
 	class HS_Base_Magazine: CA_Magazine {
@@ -461,7 +462,7 @@ class CfgMagazines {
 		nameSound = "";
 		displayName = "$STR_HS_CfgMagazines_300rnd_20mm0";
 		descriptionShort = "$STR_HS_CfgMagazines_300rnd_20mm1";
-		muzzleImpulseFactor{} = {0.1,0.1};
+		muzzleImpulseFactor[] = {0.1,0.1};
 	};
 
 	class HS_R_250rnd_30mm: HS_Base_Magazine {
@@ -474,6 +475,19 @@ class CfgMagazines {
 		tracersEvery = 1;
 		displayName = "$STR_HS_CfgMagazines_250rnd_30mm0";
 		descriptionShort = "$STR_HS_CfgMagazines_250rnd_30mm1";
+		muzzleImpulseFactor[] = {1.0,3};
+	};
+
+	class HS_R_100rnd_30mm: HS_Base_Magazine {
+		scope = 2;
+		ammo = "HS_R_30mm";
+		count = 100;
+		initSpeed = 1000;
+		maxLeadSpeed = 90;
+		nameSound = "cannon";
+		tracersEvery = 1;
+		displayName = "$STR_HS_CfgMagazines_100rnd_30mm0";
+		descriptionShort = "$STR_HS_CfgMagazines_100rnd_30mm1";
 		muzzleImpulseFactor[] = {1.0,3};
 	};
 
@@ -587,7 +601,6 @@ class CfgMagazines {
 		displayName = "$STR_HS_CfgMagazines_1500rnd_13mm0";
 		descriptionShort = "$STR_HS_CfgMagazines_1500rnd_13mm1";
 		initSpeed = 540;
-		muzzleImpulseFactor[] = {0.1,0.2}
 	};
 
 	/*CIS*/
@@ -596,6 +609,10 @@ class CfgMagazines {
 	};
 	
 	class HS_C_250rnd_30mm: HS_R_250rnd_30mm {
+		ammo = "HS_C_30mm";
+	};
+	
+	class HS_C_100rnd_30mm: HS_R_100rnd_30mm {
 		ammo = "HS_C_30mm";
 	};
 
@@ -644,13 +661,12 @@ class CfgMagazines {
 	};
 };
 
-class CfgLights {};
 
 class CfgWeapons {
 	/*extern*/ class Default;
 	/*extern*/ class CannonCore;
 
-	class HS_R_CannonCore: CannonCore {
+	/*class HS_R_CannonCore: CannonCore {
 		author = "Helix Studios";
 		scope = 0;
 		magazines[] = {
@@ -664,7 +680,7 @@ class CfgWeapons {
 		magazines[] = {
 			"",
 		};
-	};
+	};*/
 
 };
 
