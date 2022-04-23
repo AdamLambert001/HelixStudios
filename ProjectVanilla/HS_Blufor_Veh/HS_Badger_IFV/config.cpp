@@ -64,3 +64,4 @@ class CfgVehicles {
 		/*extern*/ class AnimationSources;
 		/*extern*/ class Components;		
 	};
+};
