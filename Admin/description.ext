@@ -1,0 +1,9 @@
+#include "dialog\WS_SpawnMenu.hpp"
+#include "dialog\WS_ArenaMenu.hpp"
+#include "dialog\WS_AdminMenu.hpp"
+#include "dialog\WS_LoadoutMenu.hpp"
+
+class CfgFunctions
+{
+	#include "Functions.hpp"
+};
