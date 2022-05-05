@@ -373,6 +373,11 @@ class CfgAmmo {
 	//kill all the xenos; we're just xenophobic
 
 	/*CIS*/
+	class HS_ammo_base_red: HS_ammo_base_blue {
+		model = "SWLW_main\Effects\laser_red.p3d";
+		effectfly = "HS_plasma_red";
+	}
+
 	class HS_C_HMG: HS_R_HMG {
 		model = "SWLW_main\Effects\laser_red.p3d";
 		effectfly = "HS_plasma_red";
@@ -453,6 +458,15 @@ class CfgMagazines {
 	};
 
 	/*Republic*/
+	class HS_R_1000rnd_rifle: HS_Base_Magazine {
+		scope = 2;
+		ammo = "HS_ammo_base_blue";
+		count = 1000;
+		initSpeed = 600;
+		displayName = "$STR_HS_CfgMagazines_1000rnd_rifle0";
+		descriptionShort = "$STR_HS_CfgMagazines_1000rnd_rifle1";
+	};
+
 	class HS_R_300rnd_20mm: HS_Base_Magazine {
 		scope = 2;
 		ammo = "HS_R_20mm";
@@ -604,6 +618,9 @@ class CfgMagazines {
 	};
 
 	/*CIS*/
+	class HS_C_1000rnd_rifle: HS_R_1000rnd_rifle {
+		ammo = "HS_ammo_base_red";
+	};
 	class HS_C_300rnd_20mm: HS_R_300rnd_20mm {
 		ammo = "HS_C_20mm";
 	};
@@ -662,29 +679,7 @@ class CfgMagazines {
 };
 
 
-class CfgWeapons {
-	/*extern*/ class Default;
-	/*extern*/ class CannonCore;
-
-	/*class HS_R_CannonCore: CannonCore {
-		author = "Helix Studios";
-		scope = 0;
-		magazines[] = {
-			"",
-		};
-	};
-
-	class HS_C_CannonCore: CannonCore {
-		author = "Helix Studios";
-		scope = 0;
-		magazines[] = {
-			"",
-		};
-	};*/
-
-};
-
 class cfgMods {
 	author = "Helix Studios";
-	timepacked = "014914042022";
+	timepacked = "121002052022";
 };
