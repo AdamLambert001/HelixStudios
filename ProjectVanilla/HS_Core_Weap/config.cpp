@@ -246,6 +246,13 @@ class CfgAmmo {
 		};
 	}; //find a use for this later*/
 
+	class HS_R_LMG: HS_ammo_base_blue {
+		author = "Helix Studios";
+		model = "SWLW_main\Effects\laser_blue.p3d";
+		effectfly = "HS_plasma_blue";
+		tracerScale = 1;
+	};
+
 	class HS_R_HMG: HS_ammo_base_blue {
 		model = "SWLW_main\Effects\laser_blue.p3d";
 		hit = 30;
@@ -376,7 +383,12 @@ class CfgAmmo {
 	class HS_ammo_base_red: HS_ammo_base_blue {
 		model = "SWLW_main\Effects\laser_red.p3d";
 		effectfly = "HS_plasma_red";
-	}
+	};
+	
+	class HS_C_LMG: HS_R_LMG {
+		model = "SWLW_main\Effects\laser_red.p3d";
+		effectfly = "HS_plasma_red";
+	};
 
 	class HS_C_HMG: HS_R_HMG {
 		model = "SWLW_main\Effects\laser_red.p3d";
@@ -458,6 +470,22 @@ class CfgMagazines {
 	};
 
 	/*Republic*/
+
+	class HS_R_500rnd_LMG: HS_Base_Magazine {
+		scope = 2;
+		ammo = "HS_R_LMG";
+		count = 500;
+		initSpeed = 650;
+		displayName = "$STR_HS_CfgMagazines_500rnd_LMG0";
+		descriptionShort = "$STR_HS_CfgMagazines_500rnd_LMG1";
+	};
+
+	class HS_R_1000rnd_LMG: HS_R_500rnd_LMG {
+		count = 1000;
+		displayName = "$STR_HS_CfgMagazines_1000rnd_LMG0";
+		descriptionShort = "$STR_HS_CfgMagazines_1000rnd_LMG1";
+	};
+
 	class HS_R_1000rnd_rifle: HS_Base_Magazine {
 		scope = 2;
 		ammo = "HS_ammo_base_blue";
@@ -618,6 +646,14 @@ class CfgMagazines {
 	};
 
 	/*CIS*/
+	class HS_C_500rnd_LMG: HS_R_500rnd_LMG {
+		ammo = "HS_C_LMG";
+	};
+	
+	class HS_C_1000rnd_LMG: HS_R_1000rnd_LMG {
+		ammo = "HS_C_LMG";
+	};
+
 	class HS_C_1000rnd_rifle: HS_R_1000rnd_rifle {
 		ammo = "HS_ammo_base_red";
 	};
