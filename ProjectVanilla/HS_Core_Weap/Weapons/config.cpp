@@ -33,6 +33,7 @@ class cfgWeapons
 	class MGun;
 	class LMG_RCWS: MGun {};
 	class lowROF;
+	class LMG_coax;
 
 	class HS_30mm_AC_CTWS: autocannon_30mm_CTWS {
 		scope = 2;
@@ -53,13 +54,51 @@ class cfgWeapons
 		};
 	};
 
-	class HS_HMG_APC_127: LMG_RCWS 
-	{
+	class HS_30mm_AC: gatling_30mm_base {
+		scope = 2;
+		author = "Helix Studios";
+		displayName = "$STR_HS_30mm_AC0";
+		magazines[] = {};
+		muzzles[] = {"HE","AP"};
+		class HE: gatling_30mm_base {
+			magazines[] = {"HS_R_100rnd_30mm","HS_R_250rnd_30mm","HS_C_100rnd_30mm","HS_C_250rnd_30mm"};
+			class LowROF: LowROF {
+				dispersion = 0.0055;
+			};
+		};
+		class AP: gatling_30mm_base {
+			magazines[] = {"HS_R_150rnd_30mm_APFSDS","HS_C_150rnd_30mm_APFSDS"};
+		};
+	};
+
+	/*HMG*/
+	class HS_HMG_APC_127: LMG_RCWS {
 		scope = 2;
 		author = "Helix Studios";
 		displayName = "12.7 Gatling Gun";
-		magazines[] = {"HS_R_HMG"};
+		magazines[] = {"HS_R_1500rnd_13mm"};
 		maxZeroing = 2500;
+		class GunParticles
+		{
+			class effect1
+			{
+				positionName = "usti hlavne2";
+				directionName = "konec hlavne2";
+				effectName = "MachineGunCloud";
+			};
+		};
+	};
+
+	class HS_HMG_MBT_127: HS_HMG_APC_127 {
+		class GunParticles
+		{
+			class effect1
+			{
+				positionName = "commander_gun_muzzle_pos";
+				directionName = "commander_gun_muzzle_end";
+				effectName = "MachineGunCloud";
+			};
+		};
 	};
 
 	class HS_HMG_UGV: LMG_RCWS {
@@ -160,20 +199,29 @@ class cfgWeapons
 		};
 	};
 
-	class HS_30mm_AC: gatling_30mm_base {
+	/*LMG*/
+	class HS_LMG_APC_762: LMG_RCWS {
 		scope = 2;
 		author = "Helix Studios";
-		displayName = "$STR_HS_30mm_AC0";
-		magazines[] = {};
-		muzzles[] = {"HE","AP"};
-		class HE: gatling_30mm_base {
-			magazines[] = {"HS_R_100rnd_30mm","HS_R_250rnd_30mm","HS_C_100rnd_30mm","HS_C_250rnd_30mm"};
-			class LowROF: LowROF {
-				dispersion = 0.0055;
+		displayName = "7.62 Gatling Gun";
+		magazines[] = {"HS_R_500rnd_LMG", "HS_R_1000rnd_LMG", "HS_R_2000rnd_LMG", "HS_C_500rnd_LMG", "HS_C_1000rnd_LMG", "HS_C_2000rnd_LMG"};
+		maxZeroing = 2500;
+		class GunParticles
+		{
+			class effect1
+			{
+				positionName = "usti hlavne2";
+				directionName = "konec hlavne2";
+				effectName = "MachineGunCloud";
 			};
 		};
-		class AP: gatling_30mm_base {
-			magazines[] = {"HS_R_150rnd_30mm_APFSDS","HS_C_150rnd_30mm_APFSDS"};
-		};
+	};
+
+	class HS_LMG_coax: LMG_coax {
+		displayName = "$STR_HS_cfgweapons_coaxial_mg0";
+		magazines[] = {"HS_R_500rnd_LMG", "HS_R_1000rnd_LMG", "HS_R_2000rnd_LMG", "HS_C_500rnd_LMG", "HS_C_1000rnd_LMG", "HS_C_2000rnd_LMG"}
+	};
+	class HS_LMG_coax_ext: HS_LMG_coax {
+		magazineReloadTime = 20;
 	};
 };

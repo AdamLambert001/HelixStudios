@@ -475,7 +475,7 @@ class CfgMagazines {
 		scope = 2;
 		ammo = "HS_R_LMG";
 		count = 500;
-		initSpeed = 650;
+		initSpeed = 900;
 		displayName = "$STR_HS_CfgMagazines_500rnd_LMG0";
 		descriptionShort = "$STR_HS_CfgMagazines_500rnd_LMG1";
 	};
@@ -484,6 +484,12 @@ class CfgMagazines {
 		count = 1000;
 		displayName = "$STR_HS_CfgMagazines_1000rnd_LMG0";
 		descriptionShort = "$STR_HS_CfgMagazines_1000rnd_LMG1";
+	};
+
+	class HS_R_2000rnd_LMG: HS_R_500rnd_LMG {
+		count = 2000;
+		displayName = "$STR_HS_CfgMagazines_2000rnd_LMG0";
+		descriptionShort = "$STR_HS_CfgMagazines_2000rnd_LMG1";
 	};
 
 	class HS_R_1000rnd_rifle: HS_Base_Magazine {
@@ -651,6 +657,10 @@ class CfgMagazines {
 	};
 	
 	class HS_C_1000rnd_LMG: HS_R_1000rnd_LMG {
+		ammo = "HS_C_LMG";
+	};
+
+	class HS_C_2000rnd_LMG: HS_R_2000rnd_LMG {
 		ammo = "HS_C_LMG";
 	};
 
