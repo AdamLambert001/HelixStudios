@@ -1,11 +1,8 @@
-class CfgPatches 
-{ 
-  class HS_UGV
-	{
-		author = "Helix Studios";
-		requiredAddons[] =
-		{
-			"A3_Data_F",
+class CfgPatches {
+    class HS_UGV {
+        author = "Helix Studios";
+        requiredAddons[] = {
+            "A3_Data_F",
 			"A3_Weapons_F",
 			"A3_Soft_F",
 			"A3_Drones_F",
@@ -14,22 +11,16 @@ class CfgPatches
 			"HS_Core",
             "HS_Core_Weap",
 
-		};
-		requiredVersion = 0.1;
-		units[] = 
-		{
-
-		};
-		weapons[] =
-		{
-		};
-	};
+        };
+        requiredVersion = 0.2;
+        units[] = {};
+        weapons[] = {};
+    };
 };
 
-class CfgFactionClasses 
-{
+class CfgFactionClasses {
     class HS_GAR;
-    class HS_CIS; 
+    class HS_CIS;
 };
 
 /*extern*/ class DefaultEventHandlers;
@@ -48,17 +39,16 @@ class DefaultVehicleSystemsDisplayManagerRight {
 };
 
 class CfgVehicles {
-	/*extern*/ class LandVehicle;
+    /*extern*/ class LandVehicle;
+    
+    class Car: LandVehicle {
+        /*extern*/ class NewTurret;
+    };
+    class Car_F: Car {
+        /*extern*/ class ViewOptics;
 
-	class Car: LandVehicle {
-		/*extern*/ class NewTurret;
-	};
-
-	class Car_F: Car {
-		/*extern*/ class ViewOptics;
-
-		class HitPoints {
-			/*extern*/ class HitLFWheel;
+        class HitPoints {
+            /*extern*/ class HitLFWheel;
 			/*extern*/ class HitLBWheel;
 			/*extern*/ class HitLMWheel;
 			/*extern*/ class HitLF2Wheel;
@@ -66,38 +56,37 @@ class CfgVehicles {
 			/*extern*/ class HitRBWheel;
 			/*extern*/ class HitRMWheel;
 			/*extern*/ class HitRF2Wheel;
-		};
-		/*extern*/ class NewTurret;
+        };
+        /*extern*/ class NewTurret;
 
-		class Turrets {
+        class Turrets {
+            class MainTurret: NewTurret {
+                /*extern*/ class ViewOptics;
+            };
+        };
+        /*extern*/ class AnimationSources;
+        /*extern*/ class Components;
+    };
 
-			class MainTurret: NewTurret {
-				/*extern*/ class ViewOptics;
-			};
-		};
-		/*extern*/ class AnimationSources;
-		/*extern*/ class Components;
-	};
+    class UGV_01_base_F: Car_F {
+        class Turrets {
+            class MainTurret: NewTurret {};
+        };
+    };
+    class UGV_01_rcws_base_f;
 
-	class UGV_01_base_F: Car_F {
-		class Turrets {
-			class MainTurret: NewTurret {};
-		};
-	};
-	class UGV_01_rcws_base_f;
-	
-	class HS_UGV_Base: UGV_01_base_F {
-		scope = 0;
-		author = "Helix Studios";
-		displayName = "$STR_HS_CfgVehicles_UGV_base0";
+    class HS_UGV_Base: UGV_01_base_F {
+        scope = 0;
+        author = "Helix Studios";
+        displayName = "$STR_HS_CfgVehicles_UGV_base0";
 		model = "\A3\Drones_F\soft_f_gamma\UGV_01\UGV_01_F";
 		editorSubcategory = "HS_Drones";
-		picture = "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\portrait_UGV_01_CA.paa";
+        picture = "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\portrait_UGV_01_CA.paa";
 		Icon = "\A3\Drones_F\soft_f_gamma\UGV_01\Data\UI\map_UGV_01_CA.paa";
 		hiddenSelections[] = {"camo1", "camo2", "camo3"};
 		hiddenSelectionsTextures[] = {};
-		/*engine*/
-		thrustDelay = 0.100000;
+        /*engine*/
+        thrustDelay = 0.100000;
 		brakeIdleSpeed = 1.780000;
 		fuelCapacity = 30;
 		wheelCircumference = 3.160000;
@@ -137,13 +126,12 @@ class CfgVehicles {
 		smokeLauncherAngle = 360;
 		weapons[] = {};
 		magazines[] = {};
-		threat[] = {0.000000, 0.000000, 0.000000};
 		transportMaxWeapons = 8;
 		transportMaxMagazines = 64;
-		transportMaxBackpacks = 6;
-		maximumLoad = 1000;
-
-		class TransportItems {
+		transportMaxBackpacks = 8;
+		maximumLoad = 1500;
+        
+        class TransportItems {
 
 			class _xx_FirstAidKit {
 				name = "FirstAidKit";
@@ -155,29 +143,12 @@ class CfgVehicles {
 				count = 1;
 			};
 		};
+    };
 
-		class Damage {
-			tex[] = {}; //later?
-			mat[] = 
-			{
-				"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_ext.rvmat", 
-				"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_ext_damage.rvmat", 
-				"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_ext_destruct.rvmat", 
-				"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_int.rvmat", 
-				"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_int_damage.rvmat", 
-				"A3\Drones_F\soft_f_gamma\UGV_01\Data\UGV_01_int_destruct.rvmat", 
-				"A3\Data_F\Vehicles\Turret.rvmat", 
-				"A3\Data_F\Vehicles\Turret_damage.rvmat", 
-				"A3\Data_F\Vehicles\Turret_destruct.rvmat"
-			};
-		};
-	};
-
-	class HS_UGV_Base_rcws: UGV_01_rcws_base_F {
+    class HS_UGV_base_RCWS: HS_UGV_Base {
 		displayName = "$STR_HS_CfgVehicles_UGV_rcws_base0";
 		scope = 0;
-
-		class Turrets {
+        class Turrets {
 			/*extern*/ class NewTurret;
 
 			class MainTurret: NewTurret {
@@ -210,12 +181,83 @@ class CfgVehicles {
 						isGun = 1;
 					};
 				};
-				weapons[] = {"HS_HMG_UGV","HS_30mm_AC_CTWS"};
-				magazines[] = {};
-				minElev = -12;
-				maxElev = 75;
+			weapons[] = {"HS_HMG_UGV","HS_30mm_AC_CTWS"};
+			magazines[] = {};
+			minElev = -12;
+			maxElev = 75;
+    };
 
+
+	/*unarmed*/
+	class HS_UGV_GAR: HS_UGV_Base {
+		_generalMacro = "HS_UGV_GAR";
+		scope = 2;
+		displayName = "[HS] UGV-Stampy [GAR]";
+		crew = "B_UAV_AI";
+		typicalCargo = {"B_Soldier_F"};
+		side = 1;
+		faction = "HS_GAR";
+		hiddenSelectionsTextures[] = {"\HS_UGV_Stampy\data\HS_UGV_R_Ext.paa", "\HS_UGV_Stampy\data\HS_UGV_R_Int.paa", "\HS_UGV_Stampy\data\HS_UGV_R_Turret.paa"};
+	};
+
+	/* class HS_UGV_CIS: HS_UGV_Base {
+		_generalMacro = "HS_UGV_CIS";
+		scope = 2;
+		displayName = "[HS] UGV-Stampy [CIS]";
+		crew = "O_UAV_AI";
+		typicalCargo = {"O_Soldier_F"};
+		side = 0;
+		faction = "HS_CIS";
+		hiddenSelectionsTextures[] = {};
+	};*/
+
+	/*armed*/
+	class HS_UGV_GAR_rcws: HS_UGV_Base_rcws {
+		_generalMacro = "HS_UGV_GAR_rcws";
+		scope = 2;
+		displayName = "[HS] UGV-Stompy RCWS [GAR]";
+		crew = "B_UAV_AI";
+		typicalCargo = {"B_Soldier_F"};
+		side = 1;
+		faction = "HS_GAR";
+		hiddenSelectionsTextures[] = {"\HS_UGV_Stampy\data\HS_UGV_R_Ext.paa", "\HS_UGV_Stampy\data\HS_UGV_R_Int.paa", "\HS_UGV_Stampy\data\HS_UGV_R_Turret.paa"};
+		
+		class Turrets: Turrets {
+
+			class MainTurret: MainTurret {
+				weapons[] = {"HS_HMG_UGV","HS_30mm_AC_CTWS"};
+				magazines[] = 
+				{
+					"HS_R_1500rnd_13mm", 
+					"HS_R_100rnd_30mm", 
+					"HS_R_100rnd_30mm"
+				};
+			};
+
+			class CargoTurret_01: CargoTurret_01 {
 			};
 		};
 	};
+
+	/*class HS_UGV_CIS_rcws: HS_UGV_Base_rcws {
+		_generalMacro = "HS_UGV_CIS_rcws";
+		scope = 2;
+		displayName = "[HS] UGV-Stompy RCWS [CIS]";
+		crew = "O_UAV_AI";
+		typicalCargo = {"O_Soldier_F"};
+		side = 0;
+		faction = "HS_CIS";
+		hiddenSelectionsTextures[] = {"\HS_UGV_Stampy\data\HS_UGV_C_Ext.paa", "\HS_UGV_Stampy\data\HS_UGV_C_Int.paa", "\HS_UGV_Stampy\data\HS_UGV_C_Turret.paa"};
+
+		class Turrets: Turrets {
+
+			class MainTurret: MainTurret {
+				weapons[] = {"HS_HMG_UGV","HS_30mm_AC_CTWS"};
+				magazines[] = {"HS_C_1500rnd_13mm", "HS_C_100rnd_30mm", "HS_C_100rnd_30mm"};
+			};
+
+			class CargoTurret_01: CargoTurret_01 {
+			};
+		};
+	};*/
 };

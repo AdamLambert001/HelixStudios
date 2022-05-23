@@ -219,7 +219,7 @@ class cfgWeapons
 
 	class HS_LMG_coax: LMG_coax {
 		displayName = "$STR_HS_cfgweapons_coaxial_mg0";
-		magazines[] = {"HS_R_500rnd_LMG", "HS_R_1000rnd_LMG", "HS_R_2000rnd_LMG", "HS_C_500rnd_LMG", "HS_C_1000rnd_LMG", "HS_C_2000rnd_LMG"}
+		magazines[] = {"HS_R_500rnd_LMG", "HS_R_1000rnd_LMG", "HS_R_2000rnd_LMG", "HS_C_500rnd_LMG", "HS_C_1000rnd_LMG", "HS_C_2000rnd_LMG"};
 	};
 	class HS_LMG_coax_ext: HS_LMG_coax {
 		magazineReloadTime = 20;
